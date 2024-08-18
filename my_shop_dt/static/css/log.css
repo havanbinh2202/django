@@ -1,0 +1,16 @@
+body {
+    background-image: url(../img/cccccc.webp);
+  }
+    
+  .logo {
+    font-family: 'Peralta', cursive;
+  }
+    
+  .logo a {
+    color: rgb(227, 25, 25);
+  }
+    
+  .logo a:hover,
+  .logo a:active {
+    text-decoration: none;
+  }

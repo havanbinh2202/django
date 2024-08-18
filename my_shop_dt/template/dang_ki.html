@@ -1,0 +1,23 @@
+{% extends 'log_temp.html' %}
+
+{% block title %}Đăng kí{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">ĐĂNG KÍ</h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% include 'include/form.html' %}
+            <button type="submit" class="btn btn-primary btn-block">Đăng kí</button>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Nếu đã đăng kí? <a href="{% url 'dang_nhap' %}">Đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

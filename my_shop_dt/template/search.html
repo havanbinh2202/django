@@ -1,0 +1,32 @@
+{% extends 'master_template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   {% block search %}
+   <h5> Từ khóa tìm kiếm:  {{searched}} </h5> <br>
+   <div class="row" style='width:100%'>
+    {%for product in keys %}
+    <div class="col-lg-3">
+      <img class="thumbnail" src="{{product.Imgurl}}">
+      <div class="box-element product">
+          <h6><strong>{{product.name}}</strong></h6>
+          <hr>
+  
+          <a class="btn btn-outline-success" href="{% url 'add_to_cart' product.id %}">
+           Add to cart
+          </a>
+          <a class="btn btn-outline-success" href="{% url 'product_detail' product_id=product.id %}">View</a>
+          <h6 style="display: inline-block; float:right"><strong>${{product.price | floatformat:2}}</strong></h6>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+   {% endblock search %}
+</body>
+</html>
